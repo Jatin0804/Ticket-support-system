@@ -8,7 +8,7 @@ This project will work on React.js, Node.js, and MongoDB, as well as the ability
 ## Requirements:
 
 ### Stack:o
-- Backend: Nde.js
+- Backend: Node.js
 - Frontend: React.js
 - Database: MongoDB
 
@@ -30,15 +30,15 @@ This project will work on React.js, Node.js, and MongoDB, as well as the ability
 - User Management: Admins should be able to view and manage user accounts.
 
 ### Backend Requirements:
-- API Endpoints: Create endpoints using FastAPI for all the above features (e.g., login, ticket
+- API Endpoints: Create endpoints using Node.js for all the above features (e.g., login, ticket
   submission, status update).
 - Authentication: Use JWT (JSON Web Tokens) for secure authentication.
 - Database: Use MongoDB to store user data, tickets, and status information.
 
 ### Frontend Requirements:
-- UI/UX: Develop a clean and responsive UI using Vue.js that aligns with modern design principles.
-- State Management: Use Vuex for managing the application's state.
-- Routing: Use Vue Router to manage different views (e.g., Login, Dashboard, Ticket Submission).
+- UI/UX: Develop a clean and responsive UI using React.js that aligns with modern design principles.
+- State Management: Manage the application's state.
+- Routing: Use React Router to manage different views (e.g., Login, Dashboard, Ticket Submission).
 - Notifications: Implement user notifications for ticket status updates and other relevant actions.
 
 ### Bonus (Optional):
