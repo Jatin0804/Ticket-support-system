@@ -6,7 +6,10 @@ export const NotificationProvider = ({ children }) => {
     const [notifications, setNotifications] = useState([]);
 
     const addNotification = (message) => {
-        setNotifications([...notifications, message]);
+        setNotifications((prenotifications) => [...prenotifications, message]);
+        setTimeout(() => {
+            setNotifications((prenotifications) => prenotifications.slice(1));
+        }, 3000);
     };
 
     return(

@@ -1,13 +1,17 @@
-// pages/Dashboard.js
 import React from 'react';
-// import SubmitTicket from '../components/Tickets/SubmitTicket';
-// import TicketList from '../components/Tickets/TicketList';
+import { Link } from 'react-router-dom';
 
 const NotFound = () => (
-  <div>
-    <h1>Dashboard</h1>
-    {/* <SubmitTicket /> */}
-    {/* <TicketList /> */}
+  <div className='not-found-container'>
+    <h1>
+      404 - Page not Found
+    </h1>
+    <p>
+      Go back to 
+      <Link to="/">
+        HOME
+      </Link>
+    </p>
   </div>
 );
 

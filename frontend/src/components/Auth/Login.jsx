@@ -4,44 +4,66 @@ import authService from "../../services/authService";
 import { AuthContext } from "../../context/AuthContext";
 
 const Login = () => {
-    const [email, setEmail ] = useState('');
+    const [ email, setEmail ] = useState('');
     const [ password, setPassword ] = useState('');
-    const { setUser } = useContext(AuthContext);
+    const { login } = useContext(AuthContext);
     const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        try {
-            const userData = await authService.login({
-                email, password
-            });
-            setUser(userData);
-            localStorage.setItem('token', userData.token);
+        
+        const success = login(email, password);
+        if (success){
             navigate('/dashboard');
         }
-        catch(err) {
-            console.error('Login failed', err);
-        }
+        
+        // try {
+        //     const userData = await authService.login({
+        //         email, password
+        //     });
+        //     setUser(userData);
+        //     localStorage.setItem('token', userData.token);
+        //     navigate('/dashboard');
+        // }
+        // catch(err) {
+        //     console.error('Login failed', err);
+        // }
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <input 
-                type="email"
-                placeholder="Email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)} 
-            />
-            <input
-                type="password"
-                placeholder="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-            />
-            <button type="submit">
+        <div className="auth-container">
+            <h2>
                 Login
-            </button> 
-        </form>
+            </h2>
+            <form onSubmit={handleSubmit}>
+                <div>
+                    <label>
+                        Email : 
+                    </label>
+                    <input 
+                        type="email"
+                        placeholder="Email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)} 
+                        required
+                    />
+                </div>
+                <div>
+                    <label>
+                        Password : 
+                    </label>
+                    <input
+                        type="password"
+                        placeholder="password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                    />
+                </div>
+                <button type="submit">
+                    Login
+                </button> 
+            </form>
+        </div>
     )
 }
 
